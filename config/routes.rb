@@ -1,32 +1,22 @@
 Qacio::Application.routes.draw do
 
-
-  resources :document_versions
-
-  get "pages/sign_in"
-  get "pages/test"
-
-  get "/document_versions/:id/annotate", { controller: "DocumentVersions", action: "annotate" }
-
-  get "/collaborators/new", {controller: "Collaborator", action: "new"}
-  get "/collaborators/document_version/:id/index", {controller: "Collaborator", action: "index"}
-  delete "/collaborators/:id/delete", {controller: "Collaborator", action: "delete"}, as: "delete_collaborator"
-  post "/collaborators/create"
-
-
   devise_for :users
+
+  root :to => "users#show"
+
+  resources :document_versions, :except => [ :index, :show ]
 
   resources :projects
 
   resources :documents
 
-  authenticated :user do
-    root :to => 'home#index'
-  end
+  resources :annotations, :only => [ :create, :destroy ]
 
-  root :to => "home#index"
+  resources :collaborators, :only => [ :new, :index, :destroy, :create]
 
-  post "/create_annotation", {controller: "Annotations", action: "create"}
-  delete "/delete_annotation", {controller: "Annotations", action: "delete"}
+
+  get "/document_versions/:id/annotate", { controller: "DocumentVersions", action: "annotate", as: 'annotate_document_version' }
+
+
 
 end
