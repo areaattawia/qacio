@@ -13,8 +13,8 @@ module Qacio
   class Application < Rails::Application
 
     config.generators do |g|
-      
-      
+
+
     end
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -40,6 +40,9 @@ module Qacio
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    # Dont' precompile assets when pushing to Heroku
+    config.assets.initialize_on_precompile = false
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
