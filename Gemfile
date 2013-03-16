@@ -3,7 +3,7 @@ gem 'rails', '3.2.12'
 gem 'pg'
 gem 'jquery-rails'
 gem "devise", ">= 2.2.3"
-gem 'carrierwave'
+# gem 'carrierwave'
 gem 'thin'
 
 group :assets do
@@ -22,5 +22,3 @@ end
 # gem "figaro", ">= 0.5.3"
 # gem "better_errors", ">= 0.6.0", :group => :development
 # gem "binding_of_caller", ">= 0.6.9", :group => :development
-
-
