@@ -4,6 +4,7 @@ class Document < ActiveRecord::Base
   belongs_to :project
 
   has_many :documentversions
-
   has_many :collaborators
+
+  mount_uploader :image, ImageUploader
 end
