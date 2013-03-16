@@ -1,11 +1,10 @@
 class DocumentsController < ApplicationController
-  # GET /documents
-  # GET /documents.json
 
   before_filter :require_user_and_document
+  before_filter :find_project
 
   def index
-    @documents = Document.all
+    @documents = @project.documents
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,8 +12,6 @@ class DocumentsController < ApplicationController
     end
   end
 
-  # GET /documents/1
-  # GET /documents/1.json
   def show
     @document = Document.find(params[:id])
 
@@ -24,10 +21,7 @@ class DocumentsController < ApplicationController
     end
   end
 
-  # GET /documents/new
-  # GET /documents/new.json
   def new
-    @project = Project.find(params[:project_id])
     @document = Document.new
 
     respond_to do |format|
@@ -36,15 +30,11 @@ class DocumentsController < ApplicationController
     end
   end
 
-  # GET /documents/1/edit
   def edit
     @document = Document.find(params[:id])
   end
 
-  # POST /documents
-  # POST /documents.json
   def create
-    @project = Project.find(params[:project_id])
     @document = @project.documents.new(params[:document])
 
     respond_to do |format|
@@ -58,10 +48,8 @@ class DocumentsController < ApplicationController
     end
   end
 
-  # PUT /documents/1
-  # PUT /documents/1.json
   def update
-    @document = Document.find(params[:id])
+    @document = @project.documents.find(params[:id])
 
     respond_to do |format|
       if @document.update_attributes(params[:document])
@@ -87,6 +75,10 @@ class DocumentsController < ApplicationController
   end
 
   private
+
+    def find_project
+      @project = Project.find(params[:project_id])
+    end
 
     def require_user_and_document
       @user = current_user
