@@ -6,9 +6,9 @@ Qacio::Application.routes.draw do
 
   resources :document_versions, :except => [ :index, :show ]
 
-  resources :projects
-
-  resources :documents
+  resources :projects do
+	  resources :documents
+	end
 
   resources :annotations, :only => [ :create, :destroy ]
 

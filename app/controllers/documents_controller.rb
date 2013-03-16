@@ -27,6 +27,7 @@ class DocumentsController < ApplicationController
   # GET /documents/new
   # GET /documents/new.json
   def new
+    @project = Project.find(params[:project_id])
     @document = Document.new
 
     respond_to do |format|
@@ -43,11 +44,12 @@ class DocumentsController < ApplicationController
   # POST /documents
   # POST /documents.json
   def create
-    @document = Document.new(params[:document])
+    @project = Project.find(params[:project_id])
+    @document = @project.documents.new(params[:document])
 
     respond_to do |format|
       if @document.save
-        format.html { redirect_to @document, notice: 'Document was successfully created.' }
+        format.html { redirect_to project_document_path(@project, @document), notice: 'Document was successfully created.' }
         format.json { render json: @document, status: :created, location: @document }
       else
         format.html { render action: "new" }

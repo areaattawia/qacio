@@ -18,7 +18,6 @@
     <% end %>
   </ul>
 <p>
-
+<%= link_to "Add a New Document to #{@project.name}" , new_project_document_path(@project) %><br>
 <%= link_to "Back to all Projects", projects_path %><br>
-<%= link_to "New Document", new_document_path %><br>
 <%= link_to 'Edit', edit_project_path(@project) %>
