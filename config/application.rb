@@ -45,7 +45,7 @@ module Qacio
     config.filter_parameters += [:password, :password_confirmation]
 
     # Enable escaping HTML in JSON.
-    # config.active_support.escape_html_entities_in_json = true
+    config.active_support.escape_html_entities_in_json = true
 
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
@@ -60,6 +60,7 @@ module Qacio
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    config.assets.initialize_on_precompile = false
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
