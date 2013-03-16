@@ -2,15 +2,14 @@
   <div class="large-12 columns">
     <div class="left">
       <%= link_to image_tag('exactli_final_logo.png', width: '300'), root_url %>
-      <p>Plan reviews made easy</p>
     </div>
     <ul class="nav right">
       <% if user_signed_in? %>
-        <li><%= link_to 'Projects', user_projects_url(current_user) %></li>
+        <li><%#= link_to 'Projects', user_projects_url(current_user) %></li>
         <li><%= link_to 'Edit account', edit_user_registration_path %></li>
         <li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
       <% else %>
-        <li><%= link_to 'Login', new_user_session_path %></li>
+        <li><%= link_to 'Sign in', new_user_session_path %></li>
         <li><%= link_to 'Sign up', new_user_registration_path %></li>
       <% end %>
     </ul>

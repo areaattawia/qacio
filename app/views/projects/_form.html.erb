@@ -1,4 +1,4 @@
-<%= form_for [@user, @project] do |f| %>
+<%= form_for @project do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -16,16 +16,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :text_description %><br />
+    <%= f.label :description %><br />
     <%= f.text_field :text_description %>
-  </div>
-  <div class="field">
-    <%= f.label :client %><br />
-    <%= f.text_field :client %>
   </div>
   <div class="actions">
     <%= f.submit %>

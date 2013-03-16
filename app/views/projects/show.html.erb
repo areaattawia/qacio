@@ -6,18 +6,8 @@
 </p>
 
 <p>
-  <b>Password:</b>
-  <%= @project.password %>
-</p>
-
-<p>
   <b>Text description:</b>
   <%= @project.text_description %>
-</p>
-
-<p>
-  <b>Client:</b>
-  <%= @project.client %>
 </p>
 
 <p>
@@ -29,8 +19,6 @@
   </ul>
 <p>
 
-<%= link_to "New Document", new_document_path %>
-
-
-<%= link_to 'Edit', edit_user_project_path(@user, @project) %> |
-<%= link_to 'Back', user_projects_path %>
+<%= link_to "Back to all Projects", projects_path %><br>
+<%= link_to "New Document", new_document_path %><br>
+<%= link_to 'Edit', edit_project_path(@project) %>

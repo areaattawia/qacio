@@ -1,11 +1,11 @@
 class ProjectsController < ApplicationController
 
-  before_filter :require_user
+  before_filter :authenticate_user!
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.where(user_id: current_user)
+    @projects = current_user.projects
 
     respond_to do |format|
       format.html # index.html.erb
@@ -49,7 +49,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to user_project_path(@user.id, @project.id), notice: 'Project was successfully created.' }
+        format.html { redirect_to project_path(@project), notice: 'Project was successfully created.' }
         format.json { render json: @project, status: :created, location: @project }
       else
         format.html { render action: "new" }
