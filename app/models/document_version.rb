@@ -7,5 +7,4 @@ class DocumentVersion < ActiveRecord::Base
 
   has_many :collaborators
 
-  mount_uploader :file
 end
