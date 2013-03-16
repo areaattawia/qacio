@@ -30,8 +30,6 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    binding_of_caller (0.7.1)
-      debug_inspector (>= 0.0.1)
     builder (3.0.4)
     carrierwave (0.7.1)
       activemodel (>= 3.2.0)
@@ -51,7 +49,6 @@ GEM
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     daemons (1.1.9)
-    debug_inspector (0.0.2)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -61,8 +58,6 @@ GEM
     eventmachine (1.0.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    figaro (0.5.3)
-      rails (~> 3.0)
     fssm (0.2.10)
     hike (1.2.1)
     i18n (0.6.1)
@@ -149,15 +144,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  binding_of_caller (>= 0.6.9)
   carrierwave
   coffee-rails (~> 3.2.1)
   compass-rails (>= 1.0.3)
   devise (>= 2.2.3)
-  figaro (>= 0.5.3)
   jquery-rails
   pg
-  quiet_assets (>= 1.0.1)
+  quiet_assets
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
   sqlite3
