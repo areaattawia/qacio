@@ -6,5 +6,4 @@ class Document < ActiveRecord::Base
   has_many :documentversions
   has_many :collaborators
 
-  # mount_uploader :image, ImageUploader
 end

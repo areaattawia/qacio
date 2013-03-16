@@ -3,7 +3,6 @@ gem 'rails', '3.2.12'
 gem 'pg'
 gem 'jquery-rails'
 gem "devise", ">= 2.2.3"
-# gem 'carrierwave'
 gem 'thin'
 
 group :assets do
