@@ -2,7 +2,8 @@ Qacio::Application.routes.draw do
 
   devise_for :users
 
-  root :to => "users#show"
+  root :to => "pages#home"
+
 
   resources :document_versions, :except => [ :index, :show ]
 

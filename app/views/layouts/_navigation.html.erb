@@ -1,44 +1,20 @@
 <div class="row">
-     <div class="large-12 columns">
-        <div class = "left">
-          <%= link_to image_tag('Logo', alt: 'Qacqio'), root_url %>
-          <p> Plan reviews made easy</p>
-        </div>
-
-<%= link_to "Qacio", root_url, :class => 'brand' %>
-    <ul class="nav">
+  <div class="large-12 columns">
+    <div class="left">
+      <%= link_to image_tag('exactli_final_logo.png', width: '300'), root_url %>
+      <p>Plan reviews made easy</p>
+    </div>
+    <ul class="nav right">
       <% if user_signed_in? %>
-        <li>
-        <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
-        </li>
-        <li>
-        <%= link_to 'Edit account', edit_user_registration_path %>
-        </li>
-        <li>
-              <%#= link_to 'AECOM', some_url %>
-              </li>
-          <li>
-            <%= link_to 'Projects', user_projects_url(current_user) %>
-            </li>
-          <li>
-            <%= link_to 'Log Out', destroy_user_session_path %>
-            </li>
+        <li><%= link_to 'Projects', user_projects_url(current_user) %></li>
+        <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
       <% else %>
-        <% if controller_name == 'sessions'  %>
-        <li>
-          <%= link_to 'Sign up', new_user_registration_path %>
-          </li>
-        <% else %>
-          <li>
-          <%= link_to 'Login', new_user_session_path %>
-          </li>
-      <% end %>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
       <% end %>
     </ul>
-
-    </div>
-      <hr />
-    </div>
   </div>
+</div>
 
 
