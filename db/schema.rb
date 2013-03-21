@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130316203217) do
+ActiveRecord::Schema.define(:version => 20130321185540) do
 
   create_table "annotations", :force => true do |t|
     t.integer  "document_version_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130316203217) do
     t.datetime "updated_at",  :null => false
     t.string   "file"
     t.string   "name"
+    t.string   "image"
   end
 
   create_table "documents", :force => true do |t|

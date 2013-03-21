@@ -4,7 +4,7 @@ Qacio::Application.routes.draw do
 
   root :to => "pages#home"
 
-  resources :document_versions, :except => [ :index, :show ]
+  resources :document_versions
 
   resources :projects do
 	  resources :documents

@@ -1,22 +1,49 @@
 .black {
-  background: black;
-  width: 25px !important;
-  height: 25px !important;
+  // background: black;
+  width: 25px;
+  height: 25px;
+  // border-left: 2px solid red;
+  // border-top: 2px solid red;
   border-radius: 50%;
+  border: 2px solid blue;
   display: block;
   position: absolute;
   // To make the span overlay the image behind it
   z-index: 10;
-  color: white;
-  font-size: 4pt;
+  color: blue;
+}
+
+.black p {
+  position: relative;
+  left: 25%;
+  top: 10%;
+  font-size: 10pt;
+}
+
+#image-comment-container {
+  margin: 0 auto;
+  width: 960px;
 }
 
 #image-area {
-  position: relative !important;
+  position: relative;
+  float: left;
+  width: 731px;
+  height: 500px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
 
-span.black {
-    position: aboslute;
-  }
+#image-area img {
+  width: 100%;
+}
+
+#comment-area {
+  float: right;
+  width: 227px;
+  height: 500px;
+  border: 1px solid black;
+  overflow: scroll;
 }
 
 input[type=text] {
@@ -38,4 +65,28 @@ form {
   width: 200px;
   float: left;
   margin: 25px;
+  z-index: 10;
+}
+
+.image-comment {
+  width: 200px;
+  z-index: 10;
+  margin: 0;
+  position: absolute;
+}
+
+.annotation-list {
+  list-style-type: none;
+} 
+
+.annotation-list li {
+  margin: 10px;
+}
+
+#annotate-bar {
+  width: 960px;
+}
+
+#annotate-bar img {
+  width: 960px;
 }
