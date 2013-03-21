@@ -17,6 +17,10 @@ Qacio::Application.routes.draw do
 
   get "/document_versions/:id/annotate", { controller: "DocumentVersions", action: "annotate", as: 'annotate_document_version' }
 
+  post "/create_annotation", {controller: "Annotations", action: "create"}
+  delete "/delete_annotation/:number", {controller: "Annotations", action: "destroy"}
+  put "/increment_annotation_count/:id", {controller: "DocumentVersions", action: "increment"}
+
 
 
 end
