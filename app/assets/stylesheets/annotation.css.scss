@@ -59,6 +59,9 @@ form {
   float: left;
   margin: 25px;
 }
+form button[type=submit] {
+  width: 25px;
+}
 
 .comment {
   width: 200px;
