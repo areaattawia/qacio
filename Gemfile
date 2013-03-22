@@ -10,6 +10,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem "compass-rails", ">= 1.0.3"
+  gem "zurb-foundation", ">= 3.2.5"
 end
 
 group :development do
@@ -23,4 +24,4 @@ gem 'rmagick'
 # gem "figaro", ">= 0.5.3"
 # gem "better_errors", ">= 0.6.0", :group => :development
 # gem "binding_of_caller", ">= 0.6.9", :group => :development
-# gem "zurb-foundation", ">= 3.2.5" <- should be in assets
+
